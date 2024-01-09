@@ -158,7 +158,7 @@ sensor:
     temperature:
       name: "${device_name} Temperature"
       filters:
-        - lambda: "return x-(abs(id(internal_temp).state-x)/2)+id(temperature_offset).state;"
+        - lambda: "return x+id(temperature_offset).state;"
     humidity:
       name: "${device_name} Humidity"
       filters:
