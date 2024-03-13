@@ -160,6 +160,10 @@ sensor:
       filters:
         - median
         - lambda: "return x-(abs(id(internal_temp).state-x)/2)+id(temperature_offset).state;"
+    temperature_original:
+      name: "${device_name} Temperature (Original)"
+      filters:
+        - lambda: "return x+id(temperature_offset).state;"
     humidity:
       name: "${device_name} Humidity"
       filters:
